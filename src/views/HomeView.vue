@@ -1,8 +1,5 @@
 <template>
   <section>
-    <h2>hola</h2>
-  </section>
-  <section>
     <CardCarrousel />
   </section>
 

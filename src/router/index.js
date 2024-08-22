@@ -12,36 +12,7 @@ const routes = [
     name: 'about',
     component: () => import('../views/AboutView.vue')
   },
-  {
-    path: '/',
-    name: 'about',
-    component: () => import('../views/AboutView.vue')
-  },
-  {
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/AboutView.vue')
-  },
-  {
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/AboutView.vue')
-  },
-  {
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/AboutView.vue')
-  },
-  {
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/AboutView.vue')
-  },
-  {
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/AboutView.vue')
-  },
+ 
 ]
 
 const router = createRouter({

@@ -1,20 +1,20 @@
 <template>
    <div>
+    <router-view/>
   <nav>
     <NavMenu />
   </nav>
-  <section>
-    
-  </section>
+  <section></section>
 </div>
 </template>
+
 <script>
 import NavMenu from './components/NavMenu.vue';
 
 export default {
   name: 'App',
   components: {
-    NavMenu
+    NavMenu,
   }
 }
 </script>
