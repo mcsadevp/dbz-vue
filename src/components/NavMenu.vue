@@ -4,9 +4,10 @@
       <div class="container">
         <img
           id="favicon"
-          src="../assets/icon-nav.png"
+          src="../../public/api/img/icon-nav.png"
           alt="favicon"
           @mouseenter="rotateIcon"
+          @click="goBack"
           :class="{ rotate: isRotating }"
         />
         <button
@@ -51,13 +52,11 @@ export default {
     return {
       isRotating: false,
       navItems: [
-        { label: "Inicio", link: "/", background: require('@/assets/esfera-1.png') },
-        { label: "Tilte1", link: "/about", background: require('@/assets/esfera-2.png') },
-        { label: "Title2", link: "/", background: require('@/assets/esfera-3.png') },
-        { label: "Title3", link: "/", background: require('@/assets/esfera-4.png') },
-        { label: "Title4", link: "/", background: require('@/assets/esfera-5.png') },
-        { label: "Title5", link: "/", background: require('@/assets/esfera-6.png') },
-        { label: "Title6", link: "/", background: require('@/assets/esfera-7.png') },
+        { label: "Inicio", link: "/", background: require('../../public/api/img/esfera-1.png') },
+        { label: "Fusiones", link: "/", background: require('../../public/api/img/esfera-2.png') },
+        { label: "Ataques", link: "/", background: require('../../public/api/img/esfera-3.png') },
+        { label: "Bonus", link: "/", background: require('../../public/api/img/esfera-4.png') },
+       
       ],
     };
   },
@@ -66,8 +65,11 @@ export default {
       this.isRotating = true;
       setTimeout(() => {
         this.isRotating = false;
-      }, 4000); // Duración de la animación en milisegundos
+      }, 4000);
     },
+    goBack() {
+      this.$router.go(-1); // Navegar a la página anterior
+    },// Duración de la animación en milisegundos
     handleScroll() {
       const navbar = document.getElementById("navbar");
       navbar.classList.toggle("hidden", window.scrollY !== 0);
@@ -95,9 +97,25 @@ export default {
     }
   }
 #favicon {
-  height: 5rem;
+  height: 7rem;
   margin-bottom: 25px;
   transition-duration: 1s;
+  cursor: pointer;
+}
+@media (max-width:1001px) {
+  #favicon {
+    height: 6.5rem;
+  }
+}
+@media (max-width:650px) {
+  #favicon {
+    height: 6rem;
+  }
+}
+@media (max-width:500px) {
+  #favicon {
+    height: 5rem;
+  }
 }
 
 #favicon.rotate {
@@ -110,7 +128,7 @@ export default {
 }
 
 .navbar.hidden {
-  top: -100px;
+  top: -130px;
 }
 
 .button-nav {
@@ -131,6 +149,7 @@ export default {
 @media (max-width: 777px) {
   .nav-item-container {
     align-items: flex-end;
+    text-align: end;
   }
 }
 
@@ -138,7 +157,7 @@ export default {
   border-radius: 100px;
   width: 3rem;
   height: 3rem;
-  background-size: 120%;
+  background-size: 135%;
   background-position: center;
   background-repeat: no-repeat;
   border: none;
@@ -147,9 +166,9 @@ export default {
 }
 
 .p-esfera {
-  font-size: 20px;
+  font-size: 1.5rem;
   margin-top: -10px;
-  background: linear-gradient(to right, #ffe02d, #cc2d2d);
+  background: linear-gradient(to right, #d4b061, #9b0505);
   background-clip: text;
   color: transparent;
   -webkit-background-clip: text;

@@ -1,33 +1,36 @@
 <template>
-   <div>
-    <router-view/>
-  <nav>
-    <NavMenu />
-  </nav>
-  <section></section>
-</div>
+  <div id="app">
+    <LoadingSpinner :isLoading="isLoading" />
+    <nav>
+      <NavMenu />
+    </nav>
+    <router-view />
+  </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import NavMenu from './components/NavMenu.vue';
+import LoadingSpinner from './components/LoadingSpinner.vue';
 
 export default {
   name: 'App',
   components: {
     NavMenu,
-  }
-}
+    LoadingSpinner,
+  },
+  computed: {
+    ...mapState(['loading']),
+  },
+};
 </script>
+
 <style>
 /* Reset */
 * {
   box-sizing: border-box;
   position: relative;
   min-width: 0;
-}
-
-.body {
-  min-height: 100dvh;
 }
 
 h1,
@@ -47,10 +50,10 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background: linear-gradient(to bottom, #1c4595, #060614);
+  background: linear-gradient(to bottom, #3f7efa,#012263 , #07071f);
   font-family: "Luckiest Guy", cursive;
   font-weight: 400;
   font-style: normal;
-
+  width: 100%;
 }
 </style>
