@@ -54,8 +54,8 @@ export default {
       navItems: [
         { label: "Inicio", link: "/", background: require('../../public/api/img/esfera-1.png') },
         { label: "Fusiones", link: "/", background: require('../../public/api/img/esfera-2.png') },
-        { label: "Ataques", link: "/", background: require('../../public/api/img/esfera-3.png') },
-        { label: "Bonus", link: "/", background: require('../../public/api/img/esfera-4.png') },
+        { label: "Bonus", link: "/", background: require('../../public/api/img/esfera-3.png') },
+        { label: "Buscar", link: "/", background: require('../../public/api/img/esfera-4.png') },
        
       ],
     };

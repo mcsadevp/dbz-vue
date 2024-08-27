@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <LoadingSpinner :isLoading="isLoading" />
+    <LoadingSpinner :isLoading="loading" />
     <nav>
       <NavMenu />
     </nav>
@@ -20,10 +20,14 @@ export default {
     LoadingSpinner,
   },
   computed: {
-    ...mapState(['loading']),
+    ...mapState({
+      loading: state => state.loading,
+    }),
   },
 };
 </script>
+
+
 
 <style>
 /* Reset */
@@ -50,7 +54,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background: linear-gradient(to bottom, #3f7efa,#012263 , #07071f);
+  background: linear-gradient(to bottom,#131347,#0f0f36 ,#08081b);
   font-family: "Luckiest Guy", cursive;
   font-weight: 400;
   font-style: normal;

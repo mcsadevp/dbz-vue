@@ -66,12 +66,11 @@ export default {
   width: 75%;
   height: auto;
   padding: 50px;
-  margin-top: 5rem;
+  margin-top: 12rem;
 }
 
 .title-container-img {
   text-align: center;
-  width: 80%;
 }
 
 @media (max-width: 1000px) {
@@ -87,10 +86,11 @@ export default {
   background-position: left;
   text-align: center;
   transition: background-size 2s;
+  margin-top: 7rem;
 }
 
 .title-container-text.animate-bg {
-  background-size: 140% 150%;
+  background-size: 115% 150%;
 }
 
 .title-text {

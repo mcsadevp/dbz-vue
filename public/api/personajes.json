@@ -12,7 +12,7 @@
     "versiones": [
       {
         "id": 101,
-        "ss":true,
+        "ss": true,
         "page": ".././page/page-goku-ss.png",
         "nombre": "Super Saiyan",
         "poder": 20000,
@@ -22,7 +22,7 @@
       },
       {
         "id": 102,
-        "ss":true,
+        "ss": true,
         "page": ".././page/page-goku-ss2.png",
         "nombre": "S. Saiyan 2",
         "poder": 40000,
@@ -32,7 +32,7 @@
       },
       {
         "id": 103,
-        "ss":true,
+        "ss": true,
         "page": ".././page/page-goku-ss3.png",
         "nombre": "S. Saiyan 3",
         "poder": 600000,
@@ -42,7 +42,7 @@
       },
       {
         "id": 104,
-        "ss":true,
+        "ss": true,
         "page": ".././page/page-goku-ss4.png",
         "nombre": "S. Saiyan 4",
         "poder": 800000,
@@ -52,7 +52,7 @@
       },
       {
         "id": 105,
-        "ss2":true,
+        "ss2": true,
         "page": ".././page/page-goku-dios.png",
         "nombre": "S. Saiyan God",
         "poder": 900000,
@@ -62,7 +62,7 @@
       },
       {
         "id": 106,
-        "ss2":true,
+        "ss2": true,
         "page": ".././page/page-goku-blue.png",
         "nombre": "S. Saiyan Blue",
         "poder": 950000,
@@ -72,7 +72,7 @@
       },
       {
         "id": 107,
-        "ss2":true,
+        "ss2": true,
         "page": ".././page/page-goku-ultra.png",
         "nombre": "Ultra Instinct",
         "poder": 1000000,
@@ -82,11 +82,11 @@
       }
     ]
   },
-  
+
   {
     "id": 2,
     "nombre": "Vegeta",
-    "page": ".././page/page-goku-ultra.png",
+    "page": ".././page/page-vegeta.png",
     "poder": 9500,
     "descripcion": "El príncipe de los Saiyan, conocido por su orgullo implacable, su determinación para superar a Goku y su evolución de villano a héroe.",
     "ataque": "Final Flash",
@@ -96,18 +96,18 @@
     "versiones": [
       {
         "id": 201,
-        "ss":true,
-        "page": ".././page/",
+        "ss": true,
+        "page": ".././page/page-vegeta-ss.png",
         "nombre": "Super Saiyan",
         "poder": 20000,
-        "descripcion": "La primera transformación de Vegeta en Super Saiyan, alcanzada tras un intenso entrenamiento y una inquebrantable voluntad de superación. Aumenta enormemente su poder y velocidad.",
+        "descripcion": "La primera transformación de Vegeta en Super Saiyan, alcanzada tras un intenso entrenamiento y una inquebrantable voluntad de superación.",
         "ataque": "Big Bang Attack",
         "img": ".././character/vegeta-ss.png"
       },
       {
         "id": 202,
-        "ss":true,
-        "page": ".././page/",
+        "ss": true,
+        "page": ".././page/page-vegeta-ss2.png",
         "nombre": "S. Saiyan 2",
         "poder": 400000,
         "descripcion": "Una evolución del Super Saiyan que incrementa la velocidad y el poder de Vegeta, manifestada con un aura eléctrica. Utilizada por primera vez en su lucha contra Majin Buu.",
@@ -116,7 +116,7 @@
       },
       {
         "id": 203,
-        "ss":true,
+        "ss": true,
         "page": ".././page/page-devil-vegeta.png",
         "nombre": "Majin Vegeta",
         "poder": 500000,
@@ -126,8 +126,8 @@
       },
       {
         "id": 204,
-        "ss":true,
-        "page": ".././page/",
+        "ss": true,
+        "page": ".././page/page-vegeta-ss4.png",
         "nombre": "S. Saiyan 4",
         "poder": 800000,
         "descripcion": "Una transformación alcanzada en Dragon Ball GT que combina el poder del Oozaru con el control y la habilidad de un Super Saiyan. Es una de las formas más poderosas de Vegeta.",
@@ -136,8 +136,8 @@
       },
       {
         "id": 205,
-        "ss2":true,
-        "page": ".././page/",
+        "ss2": true,
+        "page": ".././page/page-vegeta-god.png",
         "nombre": "S. Saiyan God",
         "poder": 900000,
         "descripcion": "Una forma divina obtenida tras el ritual del Super Saiyan God. Esta transformación otorga a Vegeta un poder celestial y un control superior sobre su energía.",
@@ -146,8 +146,8 @@
       },
       {
         "id": 206,
-        "ss2":true,
-        "page": ".././page/",
+        "ss2": true,
+        "page": ".././page/page-vegeta-blue.png",
         "nombre": "S. Saiyan Blue",
         "poder": 950000,
         "descripcion": "Una combinación del poder divino del Super Saiyan God con el poder del Super Saiyan. Vegeta utiliza esta forma para luchar contra enemigos de nivel divino.",
@@ -156,8 +156,8 @@
       },
       {
         "id": 207,
-        "ss2":true,
-        "page": ".././page/",
+        "ss2": true,
+        "page": ".././page/page-vegeta-blue2.png",
         "nombre": "Blue Evolution",
         "poder": 1000000,
         "descripcion": "La forma más poderosa de Vegeta, una evolución del Super Saiyan Blue que empuja sus límites aún más allá, manifestada durante el Torneo de Poder.",
@@ -166,10 +166,11 @@
       }
     ]
   },
-  
+
   {
     "id": 3,
     "nombre": "Gohan",
+    "page": ".././page/page-gohan.png",
     "poder": 800000,
     "descripcion": "El hijo de Goku, conocido por su gran potencial y su naturaleza pacífica. Aunque prefiere evitar los conflictos, su poder es inmenso cuando es necesario.",
     "ataque": "Masenko",
@@ -179,6 +180,7 @@
     "versiones": [
       {
         "id": 301,
+        "page": ".././page/page-gohan-pequenio.png",
         "nombre": "Gohan Pequeño",
         "poder": 120000,
         "descripcion": "La versión infantil de Gohan, mostrando su enorme potencial aunque limitado por su inexperiencia.",
@@ -188,6 +190,7 @@
       {
         "id": 302,
         "nombre": "Gohan Junior",
+        "page": ".././page/page-gohan-junior.png",
         "poder": 60000,
         "descripcion": "Gohan alcanza la transformación de Super Saiyan 2 durante la batalla contra Cell, liberando una fracción de su verdadero poder.",
         "ataque": "Super Kamehameha",
@@ -195,7 +198,8 @@
       },
       {
         "id": 303,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-gohan-junior-ss.png",
         "nombre": "Jr S. Saiyan",
         "poder": 100000,
         "descripcion": "La primera transformación de Gohan en Super Saiyan, aumentando significativamente su poder.",
@@ -204,7 +208,8 @@
       },
       {
         "id": 304,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-gohan-ss2.png",
         "nombre": "Jr S. Saiyan 2",
         "poder": 120000,
         "descripcion": "La transformación de Gohan en Super Saiyan 2, alcanzando un poder que supera a la mayoría de los guerreros.",
@@ -214,7 +219,8 @@
 
       {
         "id": 305,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-gohan-ss.png",
         "nombre": "Super Saiyan",
         "poder": 600000,
         "descripcion": "Gohan en su primera transformación en Super Saiyan, donde experimenta un significativo incremento en su poder.",
@@ -223,7 +229,8 @@
       },
       {
         "id": 306,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-gohan-ultimate.png",
         "nombre": "Ultimate Gohan",
         "poder": 900000,
         "descripcion": "La forma más poderosa de Gohan sin necesidad de transformarse en Super Saiyan, donde utiliza todo su potencial oculto.",
@@ -235,6 +242,7 @@
   {
     "id": 4,
     "nombre": "Trunks",
+    "page": ".././page/page-trunks.png",
     "poder": 900000,
     "descripcion": "El hijo de Vegeta, un guerrero determinado y valiente que viaja en el tiempo para salvar el futuro. Su sentido de responsabilidad lo convierte en un luchador incansable.",
     "ataque": "Burning Attack",
@@ -244,6 +252,7 @@
     "versiones": [
       {
         "id": 401,
+        "page": ".././page/page-trunks-junior.png",
         "nombre": "Trunks Junior",
         "poder": 140000,
         "descripcion": "La versión joven de Trunks, mostrando un poder significativo a pesar de su corta edad.",
@@ -252,7 +261,8 @@
       },
       {
         "id": 402,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-trunks-junior-ss.png",
         "nombre": "Jr S. Saiyan",
         "poder": 1400,
         "descripcion": "La primera transformación de Trunks en Super Saiyan, aumentando significativamente su poder.",
@@ -261,7 +271,8 @@
       },
       {
         "id": 403,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-trunks-ss.png",
         "nombre": "Super Saiyan",
         "poder": 200000,
         "descripcion": "La primera transformación de Trunks en Super Saiyan, donde su poder aumenta drásticamente.",
@@ -270,7 +281,8 @@
       },
       {
         "id": 404,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-trunks-ss2.png",
         "nombre": "Super Saiyan 2",
         "poder": 600000,
         "descripcion": "Trunks alcanza una transformación única combinando su ira con el poder del Super Saiyan, superando límites previos.",
@@ -282,6 +294,7 @@
   {
     "id": 6,
     "nombre": "Goten",
+    "page": ".././page/page-goten.png",
     "poder": "400",
     "descripcion": "El segundo hijo de Goku, un guerrero talentoso que, aunque más joven, muestra un gran potencial de combate.",
     "ataque": "Kienzan",
@@ -291,15 +304,8 @@
     "versiones": [
       {
         "id": 601,
-        "nombre": "little",
-        "poder": "1400",
-        "descripcion": "La primera transformación de Trunks en Super Saiyan, aumentando significativamente su poder.",
-        "ataque": "Burning Attack",
-        "img": ".././character/goten-little.png"
-      },
-      {
-        "id": 602,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-goten-ss.png",
         "nombre": "jr ss",
         "poder": "2000",
         "descripcion": "Goten alcanza la transformación de Super Saiyan, aumentando considerablemente su poder.",
@@ -307,16 +313,18 @@
         "img": ".././character/goten-ss.png"
       },
       {
-        "id": 603,
+        "id": 602,
         "nombre": "senior",
+        "page": ".././page/page-goten-senior.png",
         "poder": "1400",
         "descripcion": "La primera transformación de Trunks en Super Saiyan, aumentando significativamente su poder.",
         "ataque": "Burning Attack",
         "img": ".././character/goten-senior.png"
       },
       {
-        "id": 604,
-        "ss":true,
+        "id": 603,
+        "ss": true,
+        "page": ".././page/page-goten-senior-ss.png",
         "nombre": "senior ss",
         "poder": "2000",
         "descripcion": "Una transformación única de Trunks que combina la ira con el poder del Super Saiyan.",
@@ -328,6 +336,7 @@
   {
     "id": 7,
     "nombre": "Krilin",
+    "page": ".././page/page-krilin.png",
     "poder": "400",
     "descripcion": "El mejor amigo de Goku, conocido por su valentía y lealtad, a pesar de su poder relativamente bajo.",
     "ataque": "Kienzan",
@@ -337,6 +346,7 @@
     "versiones": [
       {
         "id": 701,
+        "page": ".././page/page-krilin-jr.png",
         "nombre": "jr",
         "poder": "1400",
         "descripcion": "La primera transformación de Trunks en Super Saiyan, aumentando significativamente su poder.",
@@ -346,6 +356,7 @@
       {
         "id": 702,
         "nombre": "Senior",
+        "page": ".././page/page-krilin-senior.png",
         "poder": "2000",
         "descripcion": "Una transformación única de Trunks que combina la ira con el poder del Super Saiyan.",
         "ataque": "Final Hope Slash",
@@ -356,6 +367,7 @@
   {
     "id": 8,
     "nombre": "Piccolo",
+    "page": ".././page/page-piccolo.png",
     "poder": "850",
     "descripcion": "Un antiguo enemigo de Goku que se convierte en su aliado y mentor de Gohan.",
     "ataque": "Makankosappo",
@@ -365,6 +377,7 @@
     "versiones": [
       {
         "id": 801,
+        "page": ".././page/page-piccolo-devil.png",
         "nombre": "Piccolo Devil",
         "poder": "1200",
         "descripcion": "Piccolo maligno.",
@@ -373,7 +386,8 @@
       },
       {
         "id": 802,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-piccolo-ultimate.png",
         "nombre": "Piccolo + Kami",
         "poder": "1200",
         "descripcion": "Picoro se fusiona con Kami para alcanzar su forma más poderosa.",
@@ -385,6 +399,7 @@
   {
     "id": 9,
     "nombre": "Roshi",
+    "page": ".././page/page-roshi.png",
     "poder": "850",
     "descripcion": "Un antiguo enemigo de Goku que se convierte en su aliado y mentor de Gohan.",
     "ataque": "Makankosappo",
@@ -394,6 +409,7 @@
     "versiones": [
       {
         "id": 901,
+        "page": ".././page/page-roshi-kame.png",
         "nombre": "Roshi kamhouse",
         "poder": "1200",
         "descripcion": "Picoro se fusiona con Kami para alcanzar su forma más poderosa.",
@@ -402,7 +418,8 @@
       },
       {
         "id": 902,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-roshi-xl.png",
         "nombre": "roshi XL",
         "poder": "1200",
         "descripcion": "Picoro se fusiona con Kami para alcanzar su forma más poderosa.",
@@ -414,6 +431,7 @@
   {
     "id": 10,
     "nombre": "Freezer",
+    "page": ".././page/page-freezer.png",
     "poder": "530000",
     "descripcion": "Un tirano galáctico despiadado, conocido por su crueldad y por ser uno de los villanos más temidos en el universo de Dragon Ball.",
     "ataque": "Death Beam",
@@ -423,7 +441,8 @@
     "versiones": [
       {
         "id": 1001,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-freezer-2.png",
         "nombre": "Second Form",
         "poder": "100000",
         "descripcion": "La segunda forma de Freezer, más poderosa y con un diseño más intimidante que su forma base.",
@@ -432,7 +451,8 @@
       },
       {
         "id": 1002,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-freezer-3.png",
         "nombre": "Third Form",
         "poder": "500000",
         "descripcion": "La tercera forma de Freezer, con un diseño más alargado y una mayor capacidad de combate.",
@@ -441,7 +461,8 @@
       },
       {
         "id": 1003,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-freezer-final.png",
         "nombre": "Final Form",
         "poder": "1000000",
         "descripcion": "La forma más poderosa de Freezer antes de alcanzar su transformación dorada.",
@@ -450,7 +471,8 @@
       },
       {
         "id": 1004,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-freezer-xl.png",
         "nombre": "Final XL",
         "poder": "1000000",
         "descripcion": "Una versión ampliada de la forma final de Freezer con un aumento en sus capacidades de combate.",
@@ -459,7 +481,8 @@
       },
       {
         "id": 1005,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-freezer-metal.png",
         "nombre": "Metal Freezer",
         "poder": "600000",
         "descripcion": "Una forma más resistente de Freezer, con un cuerpo reforzado por metal.",
@@ -468,7 +491,8 @@
       },
       {
         "id": 1006,
-        "ss2":true,
+        "ss2": true,
+        "page": ".././page/page-free-golden.png",
         "nombre": "Golden Freezer",
         "poder": "1200000",
         "descripcion": "Freezer alcanza un nuevo nivel de poder con su transformación dorada, superando todas sus formas anteriores.",
@@ -480,6 +504,7 @@
   {
     "id": 11,
     "nombre": "Cell",
+    "page": ".././page/page-cell.png",
     "poder": "900000",
     "descripcion": "Un bioandroide creado por el Dr. Gero, conocido por su habilidad para absorber otros seres y alcanzar niveles de poder superiores.",
     "ataque": "Kamehameha",
@@ -490,6 +515,7 @@
       {
         "id": 1101,
         "nombre": "Junior",
+        "page": ".././page/page-cell-junior.png",
         "poder": "950000",
         "descripcion": "La forma más poderosa de Cell, tras absorber a los androides 17 y 18 y alcanzar su máxima capacidad.",
         "ataque": "Solar Kamehameha",
@@ -497,7 +523,8 @@
       },
       {
         "id": 1102,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-cell-2.png",
         "nombre": "Incomplete Cell",
         "poder": "800000",
         "descripcion": "Una forma incompleta de Cell, antes de alcanzar su perfección total.",
@@ -506,7 +533,8 @@
       },
       {
         "id": 1103,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-cell-perfecto.png",
         "nombre": "Perfect Cell",
         "poder": "950000",
         "descripcion": "La forma final y perfecta de Cell, obtenida tras absorber a los androides 17 y 18.",
@@ -518,6 +546,7 @@
   {
     "id": 12,
     "nombre": "Majin Buu",
+    "page": ".././page/page-buu.png",
     "poder": "850000",
     "descripcion": "Un ser creado por el mago Bibidi, conocido por su capacidad de regeneración y su naturaleza destructiva.",
     "ataque": "Chocolate Beam",
@@ -527,7 +556,18 @@
     "versiones": [
       {
         "id": 1201,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-buu-devil.png",
+        "nombre": "Devil Buu",
+        "poder": "950000",
+        "descripcion": "La forma más pura y malévola de Majin Buu, conocida por su crueldad y poder destructivo.",
+        "ataque": "Planet Burst",
+        "img": ".././character/buu-devil.png"
+      },
+      {
+        "id": 1202,
+        "ss": true,
+        "page": ".././page/page-buu-super.png",
         "nombre": "Super Buu",
         "poder": "900000",
         "descripcion": "Una versión más poderosa y malévola de Majin Buu, con habilidades incrementadas.",
@@ -535,8 +575,9 @@
         "img": ".././character/buu-super.png"
       },
       {
-        "id": 1202,
-        "ss":true,
+        "id": 1203,
+        "ss": true,
+        "page": ".././page/page-buu-piccolo.png",
         "nombre": "Buu + Piccolo",
         "poder": "950000",
         "descripcion": "Majin Buu fusionado con Piccolo, obteniendo una mayor fuerza y habilidades destructivas.",
@@ -544,8 +585,9 @@
         "img": ".././character/buu-piccolo.png"
       },
       {
-        "id": 1203,
-        "ss":true,
+        "id": 1204,
+        "ss": true,
+        "page": ".././page/page-buu-gotenks.png",
         "nombre": "Buu + Gotenks",
         "poder": "950000",
         "descripcion": "Majin Buu fusionado con Gotenks, aumentando su poder y habilidades de combate.",
@@ -553,8 +595,9 @@
         "img": ".././character/buu-gotenks.png"
       },
       {
-        "id": 1204,
-        "ss":true,
+        "id": 1205,
+        "ss": true,
+        "page": ".././page/page-buu-gohan.png",
         "nombre": "Buu + Gohan",
         "poder": "900000",
         "descripcion": "Majin Buu fusionado con Gohan, una versión más poderosa y maligna.",
@@ -562,8 +605,9 @@
         "img": ".././character/buu-gohan.png"
       },
       {
-        "id": 1205,
-        "ss":true,
+        "id": 1206,
+        "ss": true,
+        "page": ".././page/page-buu-xl.png",
         "nombre": "Buu XL",
         "poder": "900000",
         "descripcion": "Una forma extremadamente poderosa y ampliada de Majin Buu, donde combina su ferocidad natural con un aumento significativo de tamaño y poder destructivo.",
@@ -571,8 +615,9 @@
         "img": ".././character/buu-xl.png"
       },
       {
-        "id": 1206,
-        "ss":true,
+        "id": 1207,
+        "ss": true,
+        "page": ".././page/page-buu-kid.png",
         "nombre": "Kid Buu",
         "poder": "950000",
         "descripcion": "La forma más pura y malévola de Majin Buu, conocida por su crueldad y poder destructivo.",
@@ -584,6 +629,7 @@
   {
     "id": 13,
     "nombre": "Broly",
+    "page": ".././page/page-broly.png",
     "poder": "900000",
     "descripcion": "Un guerrero Saiyan legendario conocido por su increíble fuerza y habilidades de combate.",
     "ataque": "Eraser Cannon",
@@ -593,7 +639,8 @@
     "versiones": [
       {
         "id": 1301,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-broly-ss.png",
         "nombre": "Broly SS",
         "poder": "950000",
         "descripcion": "Broly en su forma Super Saiyan, con un aumento significativo en su poder y habilidades.",
@@ -602,7 +649,8 @@
       },
       {
         "id": 1302,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-broly-ss2.png",
         "nombre": "Broly SS2",
         "poder": "980000",
         "descripcion": "Broly en su forma Super Saiyan 2, con un incremento aún mayor en su fuerza y capacidades de combate.",
@@ -611,7 +659,8 @@
       },
       {
         "id": 1303,
-        "ss2":true,
+        "ss2": true,
+        "page": ".././page/page-broly-ss3.png",
         "nombre": "Broly SS3",
         "poder": "1000000",
         "descripcion": "Broly en su forma Super Saiyan 3, alcanzando su máxima capacidad de combate y destrucción.",
@@ -623,6 +672,7 @@
   {
     "id": 14,
     "nombre": "Cooler",
+    "page": ".././page/page-cooler.png",
     "poder": "800000",
     "descripcion": "El hermano mayor de Freezer, conocido por su crueldad y por sus poderosas transformaciones.",
     "ataque": "Death Ball",
@@ -632,7 +682,8 @@
     "versiones": [
       {
         "id": 1401,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-cooler-ultimate.png",
         "nombre": "Full Power",
         "poder": "900000",
         "descripcion": "Cooler en su forma más poderosa, alcanzada tras dominar su forma final por completo.",
@@ -641,7 +692,8 @@
       },
       {
         "id": 1402,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-cooler-metal.png",
         "nombre": "Metal Form",
         "poder": "950000",
         "descripcion": "Una forma más resistente de Cooler, reforzada con un cuerpo metálico para un mayor poder.",
@@ -650,7 +702,8 @@
       },
       {
         "id": 1403,
-        "ss2":true,
+        "ss2": true,
+        "page": ".././page/page-cooler-gold.png",
         "nombre": "Golden Cooler",
         "poder": "1000000",
         "descripcion": "Cooler alcanza un nuevo nivel de poder con su transformación dorada, superando todas sus formas anteriores.",
@@ -662,6 +715,7 @@
   {
     "id": 15,
     "nombre": "Baby",
+    "page": ".././page/page-baby.png",
     "poder": "850000",
     "descripcion": "Un parásito Tuffle con la capacidad de poseer a otros seres, utilizando su cuerpo para vengarse de los Saiyans.",
     "ataque": "Revenge Death Ball",
@@ -671,6 +725,7 @@
     "versiones": [
       {
         "id": 1501,
+        "page": ".././page/page-baby-senior.png",
         "nombre": "Baby Senior",
         "poder": "960000",
         "descripcion": "La forma de Baby Vegeta se corrompe, ganando un poder oscuro que lo hace más impredecible.",
@@ -679,7 +734,8 @@
       },
       {
         "id": 1502,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-baby-vegeta.png",
         "nombre": "Baby Vegeta",
         "poder": "950000",
         "descripcion": "Baby toma control del cuerpo de Vegeta, aumentando su poder a niveles increíbles.",
@@ -688,7 +744,8 @@
       },
       {
         "id": 1503,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-baby-vegeta-ss.png",
         "nombre": "Super Baby Vegeta",
         "poder": "970000",
         "descripcion": "Después de absorber la energía de otros, Baby en el cuerpo de Vegeta se vuelve aún más fuerte.",
@@ -697,7 +754,8 @@
       },
       {
         "id": 1504,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-baby-vegeta-ss2.png",
         "nombre": "S. Baby Vegeta 2",
         "poder": "980000",
         "descripcion": "En esta forma, Baby alcanza un nuevo nivel de poder con la combinación de su energía Tuffle y la de Vegeta.",
@@ -706,7 +764,8 @@
       },
       {
         "id": 1505,
-        "ss":true,
+        "ss": true,
+        "page": ".././page/page-baby-ape.png",
         "nombre": "Golden Great Ape",
         "poder": "1000000",
         "descripcion": "En su forma de Gran Simio Dorado, Baby alcanza su nivel máximo de poder, devastando todo a su paso.",
@@ -758,7 +817,7 @@
       {
         "id": 1607,
         "nombre": "Tien Shinhan",
-        "ss":true,
+        "ss": true,
         "poder": "700000",
         "descripcion": "Un luchador experto y amigo de Goku, conocido por su técnica de combate y su tercer ojo.",
         "ataque": "Tri-Beam",
@@ -791,7 +850,7 @@
       {
         "id": 1611,
         "nombre": "Android 18",
-        "ss":true,
+        "ss": true,
         "poder": "3000000",
         "descripcion": "Un androide que se convierte en aliada de los Guerreros Z y esposa de Krillin.",
         "ataque": "Energy Blast",
@@ -800,7 +859,7 @@
       {
         "id": 1612,
         "nombre": "Android 17",
-        "ss":true,
+        "ss": true,
         "poder": "3000000",
         "descripcion": "Un androide que se convierte en aliada de los Guerreros Z y esposa de Krillin.",
         "ataque": "Energy Blast",
@@ -809,7 +868,7 @@
       {
         "id": 1613,
         "nombre": "Android 16",
-        "ss":true,
+        "ss": true,
         "poder": "3000000",
         "descripcion": "Un androide que se convierte en aliada de los Guerreros Z y esposa de Krillin.",
         "ataque": "Energy Blast",
@@ -882,7 +941,7 @@
       },
       {
         "id": 1622,
-        "ss":true,
+        "ss": true,
         "nombre": "Uub",
         "poder": "1000000",
         "descripcion": "La reencarnación humana de Kid Buu, entrenado por Goku.",
@@ -899,7 +958,7 @@
       },
       {
         "id": 1625,
-        "ss":true,
+        "ss": true,
         "nombre": "Hit",
         "poder": "Asesino profesional",
         "descripcion": "Hit es un asesino del Universo 6 conocido por su habilidad para realizar ataques letales con su técnica de salto temporal, que le permite moverse en el tiempo durante breves períodos.",
@@ -908,7 +967,7 @@
       },
       {
         "id": 1626,
-        "ss":true,
+        "ss": true,
         "nombre": "Paikuhan",
         "poder": "Gran guerrero del Otro Mundo",
         "descripcion": "Paikuhan es un formidable guerrero del Otro Mundo que ha demostrado ser uno de los luchadores más poderosos en la arena del Más Allá. Es conocido por su habilidad en artes marciales y su técnica de control del ki.",
@@ -927,7 +986,7 @@
     "versiones": [
       {
         "id": 1701,
-        "ss":true,
+        "ss": true,
         "nombre": "Raditz",
         "poder": "1500",
         "descripcion": "El hermano mayor de Goku, un Saiyan que llega a la Tierra para reclutar a su hermano.",
@@ -936,7 +995,7 @@
       },
       {
         "id": 1702,
-        "ss":true,
+        "ss": true,
         "nombre": "Nappa",
         "poder": "4000",
         "descripcion": "Un Saiyan de élite y compañero de Vegeta, conocido por su brutalidad.",
@@ -945,7 +1004,7 @@
       },
       {
         "id": 1703,
-        "ss":true,
+        "ss": true,
         "nombre": "Captain Ginyu",
         "poder": "120000",
         "descripcion": "El líder de las Fuerzas Especiales Ginyu, conocido por su habilidad de cambiar de cuerpo.",
@@ -954,7 +1013,7 @@
       },
       {
         "id": 1704,
-        "ss":true,
+        "ss": true,
         "nombre": "Jeice",
         "poder": "85000",
         "descripcion": "Un miembro de las Fuerzas Especiales Ginyu, conocido por su velocidad y ataques de energía.",
@@ -963,7 +1022,7 @@
       },
       {
         "id": 1705,
-        "ss":true,
+        "ss": true,
         "nombre": "Burter",
         "poder": "75000",
         "descripcion": "El miembro más rápido de las Fuerzas Especiales Ginyu.",
@@ -972,7 +1031,7 @@
       },
       {
         "id": 1706,
-        "ss":true,
+        "ss": true,
         "nombre": "Recoome",
         "poder": "71000",
         "descripcion": "Un miembro de las Fuerzas Especiales Ginyu, conocido por su fuerza bruta.",
@@ -981,7 +1040,7 @@
       },
       {
         "id": 1707,
-        "ss":true,
+        "ss": true,
         "nombre": "Guldo",
         "poder": "12000",
         "descripcion": "Un miembro de las Fuerzas Especiales Ginyu, con la habilidad de detener el tiempo.",
@@ -990,7 +1049,7 @@
       },
       {
         "id": 1708,
-        "ss":true,
+        "ss": true,
         "nombre": "Zarbon",
         "poder": "23000",
         "descripcion": "Un guerrero de élite al servicio de Freezer, conocido por su habilidad de transformarse.",
@@ -999,7 +1058,7 @@
       },
       {
         "id": 1709,
-        "ss":true,
+        "ss": true,
         "nombre": "Dodoria",
         "poder": "22000",
         "descripcion": "Un guerrero de élite al servicio de Freezer, conocido por su brutalidad.",
@@ -1008,7 +1067,7 @@
       },
       {
         "id": 1710,
-        "ss":true,
+        "ss": true,
         "nombre": "Dr. Gero",
         "poder": "50000",
         "descripcion": "El científico loco detrás de los androides y Cell.",
@@ -1017,7 +1076,7 @@
       },
       {
         "id": 1711,
-        "ss":true,
+        "ss": true,
         "nombre": "Android 19",
         "poder": "300000",
         "descripcion": "Un androide creado por el Dr. Gero, conocido por su habilidad de absorber energía.",
@@ -1026,7 +1085,7 @@
       },
       {
         "id": 1712,
-        "ss":true,
+        "ss": true,
         "nombre": "Bojack",
         "poder": "800000",
         "descripcion": "Un antiguo pirata galáctico liberado de su prisión, conocido por su fuerza y maldad.",
@@ -1035,7 +1094,7 @@
       },
       {
         "id": 1713,
-        "ss":true,
+        "ss": true,
         "nombre": "Zangya",
         "poder": "600000",
         "descripcion": "Una guerrera al servicio de Bojack, conocida por su fuerza y habilidades de combate.",
@@ -1052,7 +1111,7 @@
       },
       {
         "id": 1715,
-        "ss":true,
+        "ss": true,
         "nombre": "Dabura",
         "poder": "4000000",
         "descripcion": "El rey de los demonios y aliado de Babidi.",
@@ -1061,7 +1120,7 @@
       },
       {
         "id": 1716,
-        "ss":true,
+        "ss": true,
         "nombre": "Turles",
         "poder": "300000",
         "descripcion": "Un Saiyan renegado que se parece a Goku, conocido por su maldad y ambición.",
@@ -1070,7 +1129,7 @@
       },
       {
         "id": 1717,
-        "ss":true,
+        "ss": true,
         "nombre": "Spopovich",
         "poder": "150000",
         "descripcion": "Un luchador controlado por la magia de Babidi.",
@@ -1079,7 +1138,7 @@
       },
       {
         "id": 1718,
-        "ss":true,
+        "ss": true,
         "nombre": "Yamu",
         "poder": "140000",
         "descripcion": "Un luchador controlado por la magia de Babidi.",
@@ -1088,7 +1147,7 @@
       },
       {
         "id": 1719,
-        "ss":true,
+        "ss": true,
         "nombre": "Pui Pui",
         "poder": "80000",
         "descripcion": "Un guerrero al servicio de Babidi.",
@@ -1097,7 +1156,7 @@
       },
       {
         "id": 1720,
-        "ss":true,
+        "ss": true,
         "nombre": "Android 13",
         "poder": "450000",
         "descripcion": "Un androide creado por el Dr. Gero, conocido por su fuerza y habilidades de combate.",
@@ -1106,7 +1165,7 @@
       },
       {
         "id": 1721,
-        "ss":true,
+        "ss": true,
         "nombre": "Android 14",
         "poder": "400000",
         "descripcion": "Un androide creado por el Dr. Gero, conocido por su fuerza y habilidades de combate.",
@@ -1115,7 +1174,7 @@
       },
       {
         "id": 1722,
-        "ss":true,
+        "ss": true,
         "nombre": "Android 15",
         "poder": "350000",
         "descripcion": "Un androide creado por el Dr. Gero, conocido por su fuerza y habilidades de combate.",

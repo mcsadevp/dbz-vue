@@ -1,7 +1,8 @@
 <template>
   <div class="body">
-    <swiper :slides-per-view="5" :space-between="10" :loop="true" :autoplay="{ delay: 3000 }" :breakpoints="breakpoints"
-      class="mySwiper">
+    <LoadingSpinner :isLoading="isLoading" />
+
+    <swiper :slides-per-view="5" :space-between="10" :loop="true" :autoplay="{ delay: 3000 }" :breakpoints="breakpoints" class="mySwiper">
       <swiper-slide v-for="(personaje, index) in filteredCharacters" :key="index">
         <div class="card">
           <h2>{{ personaje.nombre }}</h2>
@@ -23,13 +24,15 @@
 <script>
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/swiper-bundle.css';
-import axios from 'axios';
+import { mapGetters, mapActions } from 'vuex';
+import LoadingSpinner from './LoadingSpinner.vue';
 
 export default {
   name: 'CardCarrousel',
   components: {
     Swiper,
     SwiperSlide,
+    LoadingSpinner
   },
   props: {
     isHero: {
@@ -39,10 +42,9 @@ export default {
   },
   data() {
     return {
-      personajes: [],
       breakpoints: {
-        300: { slidesPerView: 1.2,spaceBetween:10 },
-        400: { slidesPerView: 1.5,spaceBetween:10},
+        300: { slidesPerView: 1.2, spaceBetween: 10 },
+        400: { slidesPerView: 1.5, spaceBetween: 10 },
         500: { slidesPerView: 2, spaceBetween: 10 },
         640: { slidesPerView: 2.2, spaceBetween: 20 },
         768: { slidesPerView: 3, spaceBetween: 20 },
@@ -53,19 +55,18 @@ export default {
     };
   },
   computed: {
+    ...mapGetters(['loading', 'cacheLoaded', 'personajes']),
     filteredCharacters() {
       return this.personajes.filter(personaje => personaje.hero === this.isHero);
     },
   },
   async mounted() {
-    try {
-      const response = await axios.get('/api/personajes.json');
-      this.personajes = response.data;
-    } catch (error) {
-      console.error('Error fetching characters:', error);
+    if (!this.cacheLoaded) {
+      await this.fetchData(); // Fetch data from store
     }
   },
   methods: {
+    ...mapActions(['fetchData']),
     goToTransformation(id) {
       this.$router.push({ name: 'TransformationView', params: { id } });
     },
@@ -75,6 +76,9 @@ export default {
   },
 };
 </script>
+
+
+
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
 
@@ -89,7 +93,7 @@ export default {
 .card {
   position: relative;
   width: 225px;
-  height: 480px;
+  height: 465px;
   margin: 15px;
   overflow: auto;
   border-radius: 15px;

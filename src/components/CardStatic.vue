@@ -1,55 +1,88 @@
 <template>
-    <div>
-        <div class="title-container">
-            <h2 class="title-text">{{ personaje.nombre }}</h2>
-        </div>
-        <div class="cards-container">
-            <div class="card" v-for="(version, index) in personaje.versiones" :key="index">
-                <div class="card">
-                    <h2>{{ version.nombre }}</h2>
-                    <img :src="version.img" :alt="version.nombre" class="base-image" />
-                    <img v-if="version.ss" src="../../public/api/img/ki4.png" alt="Rayos" class="overlay-image" />
+  <div>
+    <!-- Spinner Overlay -->
+    <LoadingSpinner :isLoading="showSpinner" :id="$route.params.id" />
+
+    <!-- Contenido del Componente -->
+    <div v-if="!showSpinner">
+      <div class="title-container">
+        <h2 class="title-text">{{ personaje.nombre }}</h2>
+      </div>
+      <div class="cards-container">
+        <div class="card" v-for="(version, index) in personaje.versiones" :key="index">
+          <div class="card">
+            <h2>{{ version.nombre }}</h2>
+            <img :src="version.img" :alt="version.nombre" class="base-image" @load="handleImageLoad" />
+            <img v-if="version.ss" src="../../public/api/img/ki4.png" alt="Rayos" class="overlay-image" />
                     <img v-if="version.ss" src="../../public/api/img/ki.png" alt="ki" class="overlay-image" />
                     <img v-if="version.ss2" src="../../public/api/img/ki6.png" alt="Rayos" class="overlay-image" />
                     <img v-if="version.ss2" src="../../public/api/img/ki7.png" alt="ki" class="overlay-image" />
                     <img v-if="version.ss2" src="../../public/api/img/ki9.png" alt="ki" class="overlay-image" />
-                </div>
-                <div class="button-container">
-                    <button class="button-container-card">
-                        <p class="p-card" @click="goToInfoPage(version.id)">saber mas</p>
-                    </button>
-                </div>
-
-            </div>
+          </div>
+          <div class="button-container">
+            <button class="button-container-card">
+              <p class="p-card" @click="goToInfoPage(version.id)">Saber Más</p>
+            </button>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
-import axios from 'axios';
+import { mapActions } from 'vuex';
+import LoadingSpinner from './LoadingSpinner.vue';
 
 export default {
-    name: 'CardStatic',
-    data() {
-        return {
-            personaje: [],
-        };
+  name: 'CardStatic',
+  components: {
+    LoadingSpinner
+  },
+  data() {
+    return {
+      personaje: {},
+      showSpinner: false,
+    };
+  },
+  async created() {
+    const id = this.$route.params.id;
+    const hasSeenSpinner = localStorage.getItem(`spinnerShown_${id}`);
+
+    if (!hasSeenSpinner) {
+      this.showSpinner = true;
+      this.$store.dispatch('setLoading', true);
+
+      try {
+        await this.fetchData();
+        this.personaje = this.$store.getters.personajes.find(personaje => personaje.id === parseInt(id));
+      } catch (error) {
+        console.error('Error fetching character data:', error);
+      } finally {
+        setTimeout(() => {
+          this.$store.dispatch('setLoading', false);
+          this.showSpinner = false;
+          localStorage.setItem(`spinnerShown_${id}`, 'true');
+        }, 1500); // Asegura que el spinner se muestre por al menos 1500 ms
+      }
+    } else {
+      this.$store.dispatch('setLoading', false);
+      this.showSpinner = false;
+      this.personaje = this.$store.getters.personajes.find(personaje => personaje.id === parseInt(id));
+    }
+  },
+  methods: {
+    ...mapActions(['fetchData']),
+    handleImageLoad() {
+      if (this.showSpinner) {
+        this.$store.dispatch('setLoading', false);
+        this.showSpinner = false;
+      }
     },
-    async created() {
-        const id = this.$route.params.id;
-        try {
-            const response = await axios.get('/api/personajes.json');
-            this.personaje = response.data.find(personaje => personaje.id === parseInt(id));
-        } catch (error) {
-            console.error('Error fetching character data:', error);
-        }
-    },
-    methods: {
-        goToInfoPage(versionId) {
+    goToInfoPage(versionId) {
       this.$router.push({ name: 'InfoPageView', params: { id: versionId } });
     }
-    }
-    
+  }
 };
 </script>
 
@@ -83,7 +116,7 @@ export default {
 .card {
     position: relative;
     width: 225px;
-    height: 480px;
+    height: 465px;
     margin: 15px;
     overflow: hidden;
     border-radius: 15px;

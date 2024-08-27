@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import { mapActions } from 'vuex';
 
 export default {
   name: 'InfoPageVue',
@@ -27,7 +27,7 @@ export default {
   },
   computed: {
     currentImage() {
-      return this.currentVersion.page || this.personaje.page || ''; // Asegura que siempre devuelva algo
+      return this.currentVersion.page || this.personaje.page || '';
     },
     currentName() {
       return this.currentVersion.nombre || this.personaje.nombre || '';
@@ -43,44 +43,68 @@ export default {
     }
   },
   async created() {
-    const id = parseInt(this.$route.params.id); // Obtiene el ID de la ruta
-    try {
-      const response = await axios.get('/api/personajes.json');
-      const allPersonajes = response.data;
-      
-      // Primero intenta encontrar una versión con el ID proporcionado
+    const id = parseInt(this.$route.params.id);
+
+    if (!this.$store.getters.cacheLoaded) {
+      this.$store.dispatch('setLoading', true);
+      try {
+        await this.fetchData();
+        const allPersonajes = this.$store.getters.personajes;
+        let found = false;
+
+        for (const personaje of allPersonajes) {
+          const version = personaje.versiones.find(v => v.id === id);
+          if (version) {
+            this.currentVersion = version;
+            this.personaje = personaje;
+            found = true;
+            break;
+          }
+        }
+
+        if (!found) {
+          this.personaje = allPersonajes.find(personaje => personaje.id === id);
+          if (this.personaje) {
+            this.currentVersion = {};
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching character data:', error);
+      } finally {
+        setTimeout(() => {
+          this.$store.dispatch('setLoading', false);
+        }, 1000);
+      }
+    } else {
+      this.$store.dispatch('setLoading', false);
+      const allPersonajes = this.$store.getters.personajes;
       let found = false;
 
       for (const personaje of allPersonajes) {
         const version = personaje.versiones.find(v => v.id === id);
         if (version) {
           this.currentVersion = version;
-          this.personaje = personaje; // Solo para referencia adicional, puede no ser necesario
+          this.personaje = personaje;
           found = true;
-          console.log('Versión encontrada:', version); // Depuración
           break;
         }
       }
 
-      // Si no encontró una versión, busca el personaje principal
       if (!found) {
         this.personaje = allPersonajes.find(personaje => personaje.id === id);
         if (this.personaje) {
           this.currentVersion = {};
-          console.log('Personaje principal encontrado:', this.personaje); // Depuración
-        } else {
-          console.log('Ningún personaje encontrado para el ID:', id); // Depuración
         }
       }
-      
-      console.log('currentVersion:', this.currentVersion);
-      console.log('personaje:', this.personaje);
-    } catch (error) {
-      console.error('Error fetching character data:', error);
     }
   },
+  methods: {
+    ...mapActions(['fetchData'])
+  }
 };
 </script>
+
+
 
   <style scoped>
   .body {
@@ -119,7 +143,6 @@ export default {
           right: 0;
         }
       }
-      
 
       .content {
         position: absolute;
