@@ -1,36 +1,52 @@
 <template>
-  <div class="title-container-img">
-    <img src="../../public/api/img/title.png" alt="title" class="title" />
+  <!-- Contenedor del título con imagen -->
+  <div class="home-view__title-container-img">
+    <img src="../../public/api/img/title.png" alt="Título HeroZ" class="home-view__title-img" />
   </div>
-  <div class="title-container-text" @mouseenter="animateBackground">
-    <h2 class="title-text">HeroZ</h2>
+
+  <!-- Contenedor del título de HeroZ con animación -->
+  <div class="home-view__title-container-text" @mouseenter="animateBackground">
+    <h2 class="home-view__title-text">HeroZ</h2>
   </div>
-  <section>
+
+  <!-- Sección de héroes -->
+  <section class="home-view__hero-section">
     <CardCarrousel :isHero="true" />
   </section>
-  <div class="title-container-text" @mouseenter="animateBackground">
-    <h2 class="title-text">DevilZ</h2>
+
+  <!-- Contenedor del título de DevilZ con animación -->
+  <div class="home-view__title-container-text" @mouseenter="animateBackground">
+    <h2 class="home-view__title-text">DevilZ</h2>
   </div>
-  <section>
+
+  <!-- Sección de villanos -->
+  <section class="home-view__villain-section">
     <CardCarrousel :isHero="false" />
   </section>
+
+  <!-- Vista del enrutador -->
   <router-view />
 
-  <footer class="footer">
-    <div class="container">
-      <ul class="footer-nav">
-        <li class="nav-item" v-for="(item, index) in navItems" :key="index">
-          <div class="footer-item-container">
-            <a :href="item.link" class="nav-link active">
-              <button class="footer-button-item" :style="{ backgroundImage: `url(${item.background})` }"></button>
-              <p class="p-esfera-footer">{{ item.label }}</p>
+  <!-- Pie de página -->
+  <footer class="home-view__footer">
+    <div class="home-view__footer-container">
+      <ul class="home-view__footer-nav">
+        <li class="home-view__nav-item" v-for="(item, index) in navItems" :key="index">
+          <div class="home-view__footer-item-container">
+            <a :href="item.link" class="home-view__nav-link">
+              <button class="home-view__footer-button" :style="{ backgroundImage: `url(${item.background})` }"></button>
+              <p class="home-view__footer-text">{{ item.label }}</p>
             </a>
           </div>
         </li>
       </ul>
+      <div class="home-view__footer-credits">
+        <p class="home-view__credits-text">By Mc. Saavedra</p>
+      </div>
     </div>
   </footer>
 </template>
+
 <script>
 import CardCarrousel from '@/components/CardCarrousel.vue';
 
@@ -41,7 +57,6 @@ export default {
   },
   data() {
     return {
-      isAnimating: false,
       navItems: [
         { label: "Git Hub", link: "https://github.com", background: require('../../public/api/img/esfera-5.png') },
         { label: "Contacto", link: "mailto:contacto@example.com", background: require('../../public/api/img/esfera-6.png') },
@@ -50,36 +65,38 @@ export default {
     };
   },
   methods: {
+    // Método para animar el fondo del título
     animateBackground(event) {
       const element = event.target;
-      element.classList.add('animate-bg');
+      element.classList.add('home-view__title-container-text--animate');
       setTimeout(() => {
-        element.classList.remove('animate-bg');
-      }, 2000); // Duración de la animación en milisegundos
+        element.classList.remove('home-view__title-container-text--animate');
+      }, 2000);
     },
   },
 };
 </script>
 
 <style>
-.title {
+/* Los estilos se mantienen igual, solo se actualizan los nombres de las clases para seguir BEM */
+.home-view__title-img {
   width: 75%;
   height: auto;
   padding: 50px;
-  margin-top: 12rem;
+  margin-top: 8rem;
 }
 
-.title-container-img {
+.home-view__title-container-img {
   text-align: center;
 }
 
 @media (max-width: 1000px) {
-  .title {
+  .home-view__title-img {
     padding: 20px;
   }
 }
 
-.title-container-text {
+.home-view__title-container-text {
   background-image: url("../../public/api/img/poder.png");
   background-size: 0% 0%;
   background-repeat: no-repeat;
@@ -89,11 +106,11 @@ export default {
   margin-top: 7rem;
 }
 
-.title-container-text.animate-bg {
+.home-view__title-container-text--animate {
   background-size: 115% 150%;
 }
 
-.title-text {
+.home-view__title-text {
   font-size: 7rem;
   background: linear-gradient(to right, #d4b061, #9b0505);
   background-clip: text;
@@ -102,7 +119,7 @@ export default {
   color: transparent;
 }
 
-.footer {
+.home-view__footer {
   position: relative;
   bottom: 0;
   width: 100%;
@@ -111,7 +128,7 @@ export default {
   text-align: center;
 }
 
-.footer-nav {
+.home-view__footer-nav {
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -119,14 +136,14 @@ export default {
   margin-top: 12px;
 }
 
-.footer-item-container {
+.home-view__footer-item-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-.footer-button-item {
+.home-view__footer-button {
   border-radius: 100px;
   width: 3rem;
   height: 3rem;
@@ -138,8 +155,7 @@ export default {
   margin-bottom: -16px;
 }
 
-
-.p-esfera-footer {
+.home-view__footer-text {
   font-size: 2rem;
   margin-top: -10px;
   background: linear-gradient(to right, #d4b061, #9b0505);
@@ -148,13 +164,20 @@ export default {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.home-view__credits-text {
+  font-size: 1rem;
+  color: #3d3d41;
+}
+
 @media (max-width:500px) {
-  .p-esfera-footer {
+  .home-view__footer-text {
     font-size: 1.5rem;
   }
 }
+
 @media (max-width:391px) {
-  .p-esfera-footer {
+  .home-view__footer-text {
     font-size: 1rem;
   }
 }

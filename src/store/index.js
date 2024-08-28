@@ -1,13 +1,15 @@
-// store/index.js
 import { createStore } from 'vuex';
 import axios from 'axios';
 
 export default createStore({
+  // Estado global de la aplicación
   state: {
-    loading: false,
-    cacheLoaded: false,
-    personajes: [], // Agregar el estado para los personajes
+    loading: false,        // Indica si se está cargando datos
+    cacheLoaded: false,    // Indica si los datos están en caché
+    personajes: [],        // Lista de personajes
   },
+
+  // Mutaciones para modificar el estado
   mutations: {
     SET_LOADING(state, isLoading) {
       state.loading = isLoading;
@@ -17,8 +19,10 @@ export default createStore({
     },
     SET_PERSONAJES(state, personajes) {
       state.personajes = personajes;
-    }
+    },
   },
+
+  // Acciones para manejar lógica asíncrona y commits
   actions: {
     async fetchData({ commit }) {
       commit('SET_LOADING', true);
@@ -27,12 +31,11 @@ export default createStore({
         commit('SET_PERSONAJES', response.data);
         commit('SET_CACHE_LOADED', true);
       } catch (error) {
-        console.error('Error fetching characters:', error);
+        console.error('Error al obtener personajes:', error);
+        // Aquí se podría agregar una lógica para manejar el error, como mostrar una notificación
       } finally {
-        // Mantén el spinner visible por 1 segundo la primera vez
-        setTimeout(() => {
-          commit('SET_LOADING', false);
-        }, 1000);
+        // Mantiene el spinner visible por 2 segundos para mejorar UX
+        setTimeout(() => commit('SET_LOADING', false), 2000);
       }
     },
     setLoading({ commit }, isLoading) {
@@ -40,11 +43,13 @@ export default createStore({
     },
     setCacheLoaded({ commit }, isLoaded) {
       commit('SET_CACHE_LOADED', isLoaded);
-    }
+    },
   },
+
+  // Getters para acceder al estado de forma computada
   getters: {
-    isLoading: (state) => state.loading,
-    cacheLoaded: (state) => state.cacheLoaded,
-    personajes: (state) => state.personajes,
+    isLoading: state => state.loading,
+    cacheLoaded: state => state.cacheLoaded,
+    personajes: state => state.personajes,
   },
 });

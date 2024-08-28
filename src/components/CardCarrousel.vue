@@ -1,18 +1,31 @@
 <template>
-  <div class="body">
+  <!-- Contenedor principal del carrusel -->
+  <div class="card-carrousel">
+    <!-- Componente de carga -->
     <LoadingSpinner :isLoading="isLoading" />
 
-    <swiper :slides-per-view="5" :space-between="10" :loop="true" :autoplay="{ delay: 3000 }" :breakpoints="breakpoints" class="mySwiper">
-      <swiper-slide v-for="(personaje, index) in filteredCharacters" :key="index">
-        <div class="card">
-          <h2>{{ personaje.nombre }}</h2>
-          <img :src="personaje.img" :alt="personaje.nombre" class="base-image" />
-          <div class="button-container">
-            <button class="button-container-card">
-              <p class="p-card" @click="goToInfoPage(personaje.id)">Saber Más</p>
+    <!-- Carrusel de tarjetas utilizando Swiper -->
+    <swiper 
+      :slides-per-view="5" 
+      :space-between="10" 
+      :loop="true" 
+      :autoplay="{ delay: 3000 }" 
+      :breakpoints="breakpoints" 
+      class="card-carrousel__swiper"
+    >
+      <!-- Iteración sobre los personajes filtrados -->
+      <swiper-slide v-for="personaje in filteredCharacters" :key="personaje.id" class="card-carrousel__slide">
+        <!-- Tarjeta individual de personaje -->
+        <div class="card-carrousel__card">
+          <h2 class="card-carrousel__title">{{ personaje.nombre }}</h2>
+          <img :src="personaje.img" :alt="personaje.nombre" class="card-carrousel__image" loading="lazy" />
+          <!-- Contenedor de botones -->
+          <div class="card-carrousel__button-container">
+            <button class="card-carrousel__button" @click="goToInfoPage(personaje.id)">
+              <p class="card-carrousel__button-text">Saber Más</p>
             </button>
-            <button class="button-container-card" @click="goToTransformation(personaje.id)">
-              <p class="p-card">Versiones</p>
+            <button class="card-carrousel__button" @click="goToTransformation(personaje.id)">
+              <p class="card-carrousel__button-text">Versiones</p>
             </button>
           </div>
         </div>
@@ -22,12 +35,13 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/swiper-bundle.css';
 import { mapGetters, mapActions } from 'vuex';
 import LoadingSpinner from './LoadingSpinner.vue';
 
-export default {
+export default defineComponent({
   name: 'CardCarrousel',
   components: {
     Swiper,
@@ -42,6 +56,7 @@ export default {
   },
   data() {
     return {
+      // Configuración de puntos de quiebre para el carrusel
       breakpoints: {
         300: { slidesPerView: 1.2, spaceBetween: 10 },
         400: { slidesPerView: 1.5, spaceBetween: 10 },
@@ -56,41 +71,43 @@ export default {
   },
   computed: {
     ...mapGetters(['loading', 'cacheLoaded', 'personajes']),
+    // Filtrar personajes basados en la propiedad isHero
     filteredCharacters() {
       return this.personajes.filter(personaje => personaje.hero === this.isHero);
     },
   },
   async mounted() {
+    // Cargar datos si no están en caché
     if (!this.cacheLoaded) {
-      await this.fetchData(); // Fetch data from store
+      await this.fetchData();
     }
   },
   methods: {
     ...mapActions(['fetchData']),
+    // Navegar a la vista de transformación
     goToTransformation(id) {
       this.$router.push({ name: 'TransformationView', params: { id } });
     },
+    // Navegar a la página de información
     goToInfoPage(id) {
       this.$router.push({ name: 'InfoPageView', params: { id } });
     },
   },
-};
+});
 </script>
-
-
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
 
-
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+/* Contenedor principal del carrusel */
+.card-carrousel {
   width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
-.card {
+/* Tarjeta individual */
+.card-carrousel__card {
   position: relative;
   width: 225px;
   height: 465px;
@@ -105,24 +122,22 @@ export default {
   transition: transform 0.3s ease;
 }
 
-.card h2 {
+/* Título de la tarjeta */
+.card-carrousel__title {
   position: absolute;
   top: 10px;
   font-size: 2rem;
   background: linear-gradient(to right, #d4b061, #9b0505);
   background-clip: text;
-  /* Propiedad estándar */
   -webkit-background-clip: text;
-  /* Para compatibilidad con WebKit (Safari, Chrome, iOS) */
   -webkit-text-fill-color: transparent;
-  /* Necesario para que funcione en WebKit */
   color: transparent;
-  /* Propiedad estándar */
   pointer-events: none;
   z-index: 1;
 }
 
-.button-container {
+/* Contenedor de botones */
+.card-carrousel__button-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -132,7 +147,8 @@ export default {
   width: 80%;
 }
 
-.button-container-card {
+/* Botón individual */
+.card-carrousel__button {
   width: 100%;
   background-color: rgba(4, 48, 134, 0.781);
   border: none;
@@ -142,37 +158,36 @@ export default {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.p-card {
-  
+/* Texto del botón */
+.card-carrousel__button-text {
   font-size: 1.3rem;
   background: linear-gradient(to right, #d4b061, #9b0505);
   background-clip: text;
-  /* Propiedad estándar */
   -webkit-background-clip: text;
-  /* Para compatibilidad con WebKit (Safari, Chrome, iOS) */
   -webkit-text-fill-color: transparent;
-  /* Necesario para que funcione en WebKit */
   color: transparent;
-  /* Propiedad estándar */
 }
 
-.button-container-card:active {
+/* Efecto al presionar el botón */
+.card-carrousel__button:active {
   transform: translateY(4px);
   box-shadow: 0 2px rgba(28, 68, 149, 0.67);
 }
 
-.card:hover {
+/* Efecto hover en la tarjeta */
+.card-carrousel__card:hover {
   transform: scale(1.07);
 }
 
-.base-image {
+/* Imagen base de la tarjeta */
+.card-carrousel__image {
   width: 100%;
   height: 100%;
   object-fit: contain;
-
 }
 
-.overlay-image {
+/* Imagen superpuesta (si se necesita) */
+.card-carrousel__overlay-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -182,18 +197,17 @@ export default {
   transition: opacity 0.3s ease;
 }
 
-.card:hover .overlay-image {
+/* Efecto hover para la imagen superpuesta */
+.card-carrousel__card:hover .card-carrousel__overlay-image {
   opacity: 1;
   animation: fadeInOut 6ms infinite;
 }
 
+/* Animación de fade in/out */
 @keyframes fadeInOut {
-
-  0%,
-  50% {
+  0%, 50% {
     opacity: 0;
   }
-
   10% {
     opacity: 1;
   }

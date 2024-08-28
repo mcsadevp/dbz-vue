@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <!-- Spinner Overlay -->
-    <div v-if="showSpinner" class="spinner-overlay">
-      <img :src="loadingImage" alt="Loading..." />
+  <div class="loading-spinner">
+    <!-- Overlay del spinner -->
+    <div v-if="showSpinner" class="loading-spinner__overlay">
+      <img :src="loadingImage" :alt="loadingAltText" class="loading-spinner__img" />
     </div>
   </div>
 </template>
@@ -11,84 +11,77 @@
 export default {
   name: 'LoadingSpinner',
   props: {
+    // Indica si el spinner debe mostrarse
     isLoading: {
       type: Boolean,
-      required: true,
+      default: false,
     },
+    // ID del personaje para cargar una imagen específica
     id: {
       type: [String, Number],
       default: null,
     },
   },
   computed: {
+    // Determina si se debe mostrar el spinner
     showSpinner() {
       return this.isLoading;
     },
+    // Obtiene la imagen de carga apropiada
     loadingImage() {
-      // Check if there's an id to determine which image to use
-      if (this.id) {
-        return this.getLoadingImageForId();
-      }
-      // Default loading image if no id is present
-      return '../../public/api/img/icon-nav.png'; // Cambia esto a la ruta de tu imagen por defecto
+      return this.id ? this.getLoadingImageForId() : '/api/img/loading.png';
+    },
+    // Texto alternativo para la imagen de carga
+    loadingAltText() {
+      return `Cargando ${this.id ? 'personaje' : 'contenido'}...`;
     },
   },
   methods: {
+    // Obtiene la imagen de carga específica para un personaje
     getLoadingImageForId() {
-
-      return '/path/to/loading-image-based-on-id.png'; // Cambia esto a la ruta de la imagen basada en el id
+      const personaje = this.$store.getters.personajes.find(p => p.id === parseInt(this.id));
+      return personaje ? `/api/${personaje.img}` : '/api/img/loading.png';
     },
   },
 };
 </script>
 
-
 <style scoped>
-/* Agrega aquí los estilos para el overlay y el spinner si es necesario */
-.spinner-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.loading-spinner img {
-  width: 50px;
-  height: 50px;
-}
-</style>
-
-
-<style>
-.loading-overlay {
+.loading-spinner__overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
-  /* Azul oscuro con opacidad */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
   backdrop-filter: blur(5px);
-  /* Efecto de difuminado */
 }
 
-.loading-spinner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@keyframes scaleRotate {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.5) rotate(0deg);
+  }
+  50% {
+    transform: scale(1) rotate(360deg);
+  }
+  75% {
+    transform: scale(1.5) rotate(360deg);
+  }
+  100% {
+    transform: scale(1) rotate(720deg);
+  }
 }
 
-.loading-spinner img {
+.loading-spinner__img {
   width: 100px;
   height: 100px;
+  animation: scaleRotate 3s infinite;
 }
 </style>

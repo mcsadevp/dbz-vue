@@ -1,15 +1,17 @@
 <template>
-  <div class="body">
-    <nav id="navbar" class="navbar navbar-expand-md navbar-dark fixed-top">
+  <div class="nav-menu">
+    <nav id="navbar" class="nav-menu__navbar navbar navbar-expand-md navbar-dark fixed-top">
       <div class="container">
+        <!-- Favicon con animación de rotación -->
         <img
-          id="favicon"
+          class="nav-menu__favicon"
+          :class="{ 'nav-menu__favicon--rotating': isRotating }"
           src="../../public/api/img/icon-nav.png"
           alt="favicon"
           @mouseenter="rotateIcon"
           @click="goBack"
-          :class="{ rotate: isRotating }"
         />
+        <!-- Botón de hamburguesa para dispositivos móviles -->
         <button
           class="navbar-toggler"
           type="button"
@@ -21,20 +23,21 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- Menú de navegación -->
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto button-nav">
+          <ul class="navbar-nav ms-auto nav-menu__list">
             <li
-              class="nav-item"
               v-for="(item, index) in navItems"
               :key="index"
+              class="nav-item nav-menu__item"
             >
-              <div class="nav-item-container">
+              <div class="nav-menu__item-container">
                 <router-link class="nav-link active" :to="item.link">
                   <button
-                    class="button-nav-item"
+                    class="nav-menu__button"
                     :style="{ backgroundImage: `url(${item.background})` }"
                   ></button>
-                  <p class="p-esfera">{{ item.label }}</p>
+                  <p class="nav-menu__label">{{ item.label }}</p>
                 </router-link>
               </div>
             </li>
@@ -56,23 +59,25 @@ export default {
         { label: "Fusiones", link: "/", background: require('../../public/api/img/esfera-2.png') },
         { label: "Bonus", link: "/", background: require('../../public/api/img/esfera-3.png') },
         { label: "Buscar", link: "/", background: require('../../public/api/img/esfera-4.png') },
-       
       ],
     };
   },
   methods: {
+    // Inicia la animación de rotación del favicon
     rotateIcon() {
       this.isRotating = true;
       setTimeout(() => {
         this.isRotating = false;
       }, 4000);
     },
+    // Navega a la página anterior
     goBack() {
-      this.$router.go(-1); // Navegar a la página anterior
-    },// Duración de la animación en milisegundos
+      this.$router.go(-1);
+    },
+    // Maneja el scroll para ocultar/mostrar la barra de navegación
     handleScroll() {
       const navbar = document.getElementById("navbar");
-      navbar.classList.toggle("hidden", window.scrollY !== 0);
+      navbar.classList.toggle("nav-menu__navbar--hidden", window.scrollY !== 0);
     },
   },
   mounted() {
@@ -88,50 +93,31 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
 
 @keyframes rotate {
-  from {
-        transform: rotate(0deg);
-    }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
-    to {
-        transform: rotate(360deg);
-    }
-  }
-#favicon {
+.nav-menu__favicon {
   height: 7rem;
   margin-bottom: 25px;
   transition-duration: 1s;
   cursor: pointer;
 }
-@media (max-width:1001px) {
-  #favicon {
-    height: 6.5rem;
-  }
-}
-@media (max-width:650px) {
-  #favicon {
-    height: 6rem;
-  }
-}
-@media (max-width:500px) {
-  #favicon {
-    height: 5rem;
-  }
-}
 
-#favicon.rotate {
+.nav-menu__favicon--rotating {
   animation: rotate 4s ease-in-out;
   scale: 1.2;
 }
 
-.navbar {
+.nav-menu__navbar {
   transition: top 0.5s;
 }
 
-.navbar.hidden {
+.nav-menu__navbar--hidden {
   top: -130px;
 }
 
-.button-nav {
+.nav-menu__list {
   display: flex;
   justify-content: center;
   padding: 0;
@@ -139,21 +125,14 @@ export default {
   list-style-type: none;
 }
 
-.nav-item-container {
+.nav-menu__item-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-@media (max-width: 777px) {
-  .nav-item-container {
-    align-items: flex-end;
-    text-align: end;
-  }
-}
-
-.button-nav-item {
+.nav-menu__button {
   border-radius: 100px;
   width: 3rem;
   height: 3rem;
@@ -165,7 +144,7 @@ export default {
   margin-bottom: -16px;
 }
 
-.p-esfera {
+.nav-menu__label {
   font-size: 1.5rem;
   margin-top: -10px;
   background: linear-gradient(to right, #d4b061, #9b0505);
@@ -175,4 +154,22 @@ export default {
   -webkit-text-fill-color: transparent;
 }
 
+@media (max-width: 1001px) {
+  .nav-menu__favicon { height: 6.5rem; }
+}
+
+@media (max-width: 777px) {
+  .nav-menu__item-container {
+    align-items: flex-end;
+    text-align: end;
+  }
+}
+
+@media (max-width: 650px) {
+  .nav-menu__favicon { height: 6rem; }
+}
+
+@media (max-width: 500px) {
+  .nav-menu__favicon { height: 5rem; }
+}
 </style>

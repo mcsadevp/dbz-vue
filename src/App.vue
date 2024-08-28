@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <LoadingSpinner :isLoading="loading" />
+    <LoadingSpinner :isLoading="isLoading" />
     <nav>
       <NavMenu />
     </nav>
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 import NavMenu from './components/NavMenu.vue';
 import LoadingSpinner from './components/LoadingSpinner.vue';
 
@@ -20,14 +20,16 @@ export default {
     LoadingSpinner,
   },
   computed: {
-    ...mapState({
-      loading: state => state.loading,
-    }),
+    ...mapGetters(['isLoading']),
+  },
+  methods: {
+    ...mapActions(['fetchData']),
+  },
+  mounted() {
+    this.fetchData();
   },
 };
 </script>
-
-
 
 <style>
 /* Reset */
@@ -54,7 +56,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background: linear-gradient(to bottom,#131347,#0f0f36 ,#08081b);
+  background: linear-gradient(to bottom, #131347, #0f0f36, #0f0f36);
   font-family: "Luckiest Guy", cursive;
   font-weight: 400;
   font-style: normal;

@@ -26,7 +26,14 @@ const routes = [
   },
 ];
 
-export default createRouter({
+const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
 });
+
+router.beforeEach((to, from, next) => {
+  document.title = `Dragon Ball Z - ${to.name}`;
+  next();
+});
+
+export default router;
